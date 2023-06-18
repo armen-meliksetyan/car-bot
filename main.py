@@ -1,17 +1,17 @@
 from car_data_parser import CarDataParser
 import telebot
 from database import Database
+import config
 
-bot_token = '<token>'
-bot = telebot.TeleBot(bot_token)
 
-url = 'https://auto.am'
-db_name = 'car_data.db'
+bot = telebot.TeleBot(config.bot_token)
+
+
   
-parser = CarDataParser(url)
+parser = CarDataParser(config.url)
 car_data = parser.parse_html()
-db = Database(db_name, car_data)
-db.clear_table()
+db = Database(config.db_name, car_data)
+# db.clear_table()
 db.store_in_database()
 
 @bot.message_handler(commands=['start'])
