@@ -5,13 +5,10 @@ import config
 
 
 bot = telebot.TeleBot(config.bot_token)
-
-
-  
 parser = CarDataParser(config.url)
 car_data = parser.parse_html()
 db = Database(config.db_name, car_data)
-# db.clear_table()
+db.clear_table()
 db.store_in_database()
 
 @bot.message_handler(commands=['start'])

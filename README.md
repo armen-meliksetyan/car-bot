@@ -1,7 +1,27 @@
 # car-bot
 
-Installing requirments
+## Creating a virtual environment
 
 ```
-pip install pyTelegramBotAPI
+python -m venv venv
+```
+
+<br>
+
+- On Linux/MacOS
+```
+source venv/bin/activate
+```
+
+<br>
+
+- On Windows
+```
+venv\Scripts\activate
+```
+
+## Installing the requirments
+
+```
+pip install -r requirements.txt
 ```

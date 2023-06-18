@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
-import sqlite3
 from car_data import CarData
+
 
 class CarDataParser:
     def __init__(self, url):
